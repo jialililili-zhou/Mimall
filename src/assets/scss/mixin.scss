@@ -1,0 +1,46 @@
+// mixin定义方法
+
+// 1、flex布局复用   space-between:默认值
+@mixin flex($hov:space-between,$col:center){
+  // 源代码：
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+
+  // 转成方法
+  display: flex;
+  justify-content: $hov;
+  align-items: $col;
+}
+
+// 2、背景图片样式的复用
+@mixin bgImg($w:0,$h:0,$img:'',$size:contain){
+  display: inline-block;
+  width: $w;
+  height: $h;
+  background: url($img) no-repeat center;
+  background-size: $size;
+}
+@mixin position($pos:absolute,$top:0,$left:0,$w:100%,$h:100%){
+  position:$pos;
+  top:$top;
+  left:$left;
+  width:$w;
+  height:$h;
+}
+@mixin positionImg($pos:absolute,$top:0,$right:0,$w:0,$h:0,$img:''){
+  position:$pos;
+  top:$top;
+  right:$right;
+  width:$w;
+  height:$h;
+  background:url($img) no-repeat center;
+  background-size:contain;
+}
+@mixin border($bw:1px,$bc:$colorF,$bs:solid) {
+  border: $bw $bs $bc; 
+}
+@mixin height($h:0,$lh:$h) {
+  height: $h;
+  line-height: $lh;
+}

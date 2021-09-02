@@ -1,0 +1,60 @@
+@import './mixin.scss';
+
+.container{
+  width:1226px;
+  margin-right: auto;
+  margin-left: auto;
+}
+a{
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+input{
+  outline: none;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float:right;
+}
+// ,并集选择器
+.clearfix::before,.clearfix::after{
+  content:'';
+  display:table;
+}
+.clearfix::after{
+  clear:both;
+}
+// orderheader和navheader的logo样式
+.header-logo{
+  display:inline-block;
+  width:55px;
+  height: 55px;
+  background-color: #FF6600;
+  a{
+    display:inline-block;
+    width: 110px;
+    height: 55px;
+    
+    &:before{       // scss中伪类的写法
+      content:'';
+      @include bgImg(55px,55px,'/imgs/mi-logo.png',55px);
+      transition:margin .2s;    //鼠标移出，也缓慢改变
+    }
+
+    &:after{       // scss中伪类的写法
+      content:'';
+      @include bgImg(55px,55px,'/imgs/mi-home.png',55px);
+    }
+
+    &:hover:before{
+      margin-left: -55px;
+      transition: margin .2s;
+    }
+  }
+}
