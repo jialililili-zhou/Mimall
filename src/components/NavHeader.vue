@@ -1,4 +1,4 @@
-<template>
+`<template>
   <div class='header'>
     <!-- 1、吸顶导航 -->
     <div class='nav-topbar'>
